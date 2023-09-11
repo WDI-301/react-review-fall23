@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const capitolize = (inputString) => {
     // function to capitolize a string of words
     // get the first character of each word and make it capitol
@@ -29,3 +31,23 @@ export const camelCase = ( inputString, setInputString) => {
     setInputString(resultArr.join(''))
     // defaultString
 }
+
+const StringFunctionalComponent = (props) => {
+    // 
+    const switchCaseDispatch = (params) => {
+        switch (params) {
+            case 'camelCase IT!':
+                return camelCase(props.inputString, props.setInputString)
+            case 'Capitolize It!':
+                return props.setInputString(capitolize(props.inputString))
+            default:
+                break;
+        }
+    }
+
+    return (
+        <button onClick={() => switchCaseDispatch(props.name)}>{props.name}</button>
+    )
+}
+
+export default StringFunctionalComponent

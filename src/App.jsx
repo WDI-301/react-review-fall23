@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { camelCase, capitolize } from './components/StringFunctions'
+import StringButton, { camelCase, capitolize } from './components/StringFunctions'
+import StringCounter from './components/StringCounter'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       </div>
       <div className='card'>
         <h3>inputString: {inputString}</h3>
+        {/* input */}
       </div>
       <div className="card">
         {/* <button onClick={() => setCount((count) => count + 1)}>
@@ -33,6 +35,23 @@ function App() {
       <button onClick={() => setInputString(capitolize(inputString))}>Capitolize It!</button>
       <button onClick={() => camelCase(inputString, setInputString)}>camelCase IT!</button>
       </div>
+
+      --------------Component----------------------
+      <StringCounter 
+        madeUpProperty = "I made this prop"
+        inputString = {inputString}
+      />
+      --------------Component with Switch Case ------------<br />
+      <StringButton
+        name = "Capitolize It!"
+        inputString = {inputString}
+        setInputString = {setInputString}
+      />
+      <StringButton 
+        name = "camelCase IT!"
+        inputString = {inputString}
+        setInputString = {setInputString}
+      />
     </>
   )
 }
