@@ -30,7 +30,8 @@ function App() {
           count is {count}
         </button>
         <button onClick={setHelloWorldFunc}>Set Hello World</button> */}
-      <button onClick={() => capitolize(inputString)}>Capitolize It!</button>
+      <button onClick={() => setInputString(capitolize(inputString))}>Capitolize It!</button>
+      <button>camelCase IT!</button>
 
       </div>
     </>
