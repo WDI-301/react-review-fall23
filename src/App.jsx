@@ -2,13 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { capitolize } from './components/StringFunctions'
+import { camelCase, capitolize } from './components/StringFunctions'
 
 
 function App() {
   const [count, setCount] = useState(0)
   const [helloWorld, setHelloWorld] = useState('Hello World')
-  const [inputString, setInputString] = useState('default string')
+  const [inputString, setInputString] = useState('default string TestIng')
   
   const setHelloWorldFunc = () => {
     // alert('setHelloWorldInput')
@@ -31,8 +31,7 @@ function App() {
         </button>
         <button onClick={setHelloWorldFunc}>Set Hello World</button> */}
       <button onClick={() => setInputString(capitolize(inputString))}>Capitolize It!</button>
-      <button>camelCase IT!</button>
-
+      <button onClick={() => camelCase(inputString, setInputString)}>camelCase IT!</button>
       </div>
     </>
   )

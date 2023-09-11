@@ -18,7 +18,14 @@ export const camelCase = ( inputString, setInputString) => {
     // capitolize the rest
     // join without spaces
     // you can assume each word is separated by a single space - ' '
+    let splitArr = inputString.split(' ')
+    let resultArr = new Array
+    resultArr.push(splitArr[0].toLowerCase())
+    for (let index = 1; index < splitArr.length; index++) {
+        const element = splitArr[index];
+        resultArr.push(capitolize(element.toLowerCase()))
+    }
 
-
+    setInputString(resultArr.join(''))
     // defaultString
 }
